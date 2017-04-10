@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>三栏式布局</title>
+	<style type="text/css">
+		body {
+			margin: 0px;
+			padding: 0px;
+		}
+		.container {
+			margin: 20px;
+			padding: 20px 140px 20px 220px;
+			background-color: #eee;
+			border: #999 1px solid;
+			overflow: hidden;
+		}
+		.main {
+			float: left;
+			width: 100%;
+		}
+		.main-content {
+			margin: 0px 20px;
+			background-color: red;
+			border: #999 1px solid;
+			background-color: #fff;
+		}
+		.left {
+			float: left;
+			width: 200px;
+			margin-left: -100%;
+			position: relative;
+			left: -200px;
+			border: #999 1px solid;
+			background-color: #fff;
+		}
+		.right {
+			float: left;
+			width: 120px;
+			margin-left: -122px;
+			position: relative;
+			right: -122px;
+			border: #999 1px solid;
+			background-color: #fff;
+		}
+		.wrap {
+			margin: 20px;
+		}
+		.logo {
+			width: 80px;
+			height: 80px;	
+		}
+		.right .logo{
+			margin-top: 20px;
+		}
+		.name {
+			float: right;
+			margin-top: 0px;
+		}
+		.left p {
+			font-size: 12px;
+			font-family: "Microsoft Yahei";
+		}
+		.main p {
+			font-size: 14px;
+			text-indent: 2em;
+		}
+		@media screen and (max-width:768px) {
+		    .left,
+		    .right,
+		    .main {
+		        float: none;
+		        width: auto;
+		        margin: 0 auto;
+		        left: 0px;
+		        right: 0px;
+		    }
+		    .container {
+		    	padding: 20px;
+		    }
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="main">
+			<div class="main-content">
+				<div class="wrap">
+					<h4>教育背景：</h4>
+						<p>2016.09–2017.02 德国|斯图加特大学|学术交流</p>
+						<p>2014.09–2017.06 同济大学|测绘科学与技术专业|硕士</p>
+						<p>2010.09–2014.06 同济大学|测绘工程专业|本科</p>
+					<h4>项目经历：</h4>
+						<h5>1. HTML5+CSS3+JavaScript七夕动画</h5>
+							<p>三个主题场景页面的无缝滚动</p>
+							<p>CSS Sprite视觉差动画效果、CSS3 transition动画过渡</p>
+							<p>JavaScript页面动画、jQuery deferred异步编程</p>
+							<p>HTML5 audio音频效果</p>
+						<h5>2. 测绘计算系统web软件开发</h5>
+							<p>集成测绘类相关计算功能的web软件（ASP.NET, JavaScript）</p>
+							<p>主页图片轮播，计算页面80+，网址：<a href="http://www.3droplets.cn" target="_blank">www.3droplets.cn</a> </p>
+							<p>负责页面设计、网页布局实现、浏览器Hack、网页功能实现</p>
+							<p>负责网站项目的计算功能调试和服务器端的管理</p>
+				</div>
+			</div>
+		</div>
+		<div class="left">
+			<div class="wrap">
+				<img class="logo" src="yf.jpg">
+				<p class="name">杨飞个人简历</p>
+			</div>
+		</div>
+		<div class="right">
+			<div class="wrap">
+				<img class="logo" src="pic1.jpg">
+				<img class="logo" src="pic1.jpg">
+				<img class="logo" src="pic1.jpg">
+				<img class="logo" src="pic1.jpg">
+			</div>
+		</div>
+	</div>	
+</body>
+</html>
