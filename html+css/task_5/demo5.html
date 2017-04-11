@@ -1,0 +1,391 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>零基础HTML编码及CSS编码（二）</title>
+	<style type="text/css">
+		body {
+			margin: 0;
+			padding: 0;
+			background-color: #CCCCFF;
+			font-family: "Microsoft Yahei";
+		}
+
+		header nav {
+			width: 100%;
+			background-color: black;
+			height: 60px;
+		}
+
+		header nav ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			height: 60px;
+		}
+
+		.mainBox {
+			margin: 10px;
+			padding-right: 400px;
+			overflow: hidden;
+		}
+
+		.leftBox {
+			float: left;
+			width: 100%;
+		}
+
+		.rightBox {
+			float: left;
+			width: 400px;
+			margin-left: -400px;
+			position: relative;
+			right: -400px;
+
+		}
+
+		.logo {
+			width: 100px;
+			float: left;
+		}
+
+		.logo img {
+			height: 60px;
+		}
+
+		.right {
+			float: right;
+		}
+
+		.right li {
+			float: left;
+		}
+
+		li a {
+			display: block;
+			color: white;
+			font-size: 14px;
+			text-align: center;
+			line-height: 10px;
+			padding: 30px 16px;
+			text-decoration: none;
+		}
+
+		.container {
+			margin: 5px;
+			padding: 20px;
+			background-color: white;
+			border: #9e9e9e 1px solid;
+			box-shadow: #000000 1px 1px 1px;
+		}
+
+		.author {
+			font-size: 14px;
+			font-family: "Microsoft Yahei";
+		}
+
+		.content {
+			font-size: 16px;
+			letter-spacing: 2px;
+			line-height: 22px;
+			text-indent: 2em;
+		}
+
+		.uList {
+			list-style-type: none;
+			font-size: 16px;
+			letter-spacing: 2px;
+			line-height: 22px;
+		}
+
+		.picBox {
+			margin: 10px;		
+			width: 140px;
+			border: #9e9e9e 0.5px solid;
+			font-size: 16px;
+			font-family: "Microsoft Yahei";
+			letter-spacing: 2px;
+			text-align: center;
+			float: left;
+		}
+
+		.picBox img {
+			width: 120px;
+			padding: 5px;
+		}
+
+		.table1 {
+			border: solid #9e9e9e;
+			border-width: 1px 0px 0px 1px;
+			width: 100%; 
+			border-collapse: collapse;
+		}
+
+		.table1 th {
+			border: solid #9e9e9e;
+			border-width: 0px 1px 1px 0px;
+			height: 30px;
+			background-color: black;
+			color: white;
+			text-align: left;
+			padding-left: 10px;
+		}
+
+		.table1 td {
+			border: solid #9e9e9e;
+			border-width: 0px 1px 1px 0px;
+			height: 30px;
+			padding-left: 10px;
+		}
+
+		.total {
+			background-color: #9e9e9e;
+			color: black;
+			font-weight: bold;
+		}
+
+		.formLine {
+			margin: 10px auto;
+			padding: 0px;
+			width: 100%;
+		}
+
+		.formLabel {
+			padding: 0px;
+			margin: 0px;
+			display: inline-block;
+			width: 40%;
+			text-align: right;
+		}
+
+		.formLine select {
+			border-radius: 5px;
+		}
+
+		.formLine textarea {
+			width: 55%;
+			height: 50px;
+		}
+
+		.prompt {
+			font-weight: lighter;
+			font-size: 12px;
+			margin-top: -5px;
+		}
+		
+		#mysubmit {
+			width: 100%;
+			text-align: center;
+			background-color: blue;
+			color: white;
+			height: 40px;
+			font-size: 20px;
+			font-weight: bold;
+			border-radius: 10px;
+			cursor: pointer;
+		}
+
+		.clearfix {
+			overflow: auto;
+		}
+
+		footer {
+			width: 100%;
+			background-color: black;
+			color: white;
+			height: 50px;
+			text-align: center;
+			padding-top: 20px;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li class="logo"><img src="bd_logo1.png" alt="logo" /></li>
+				<li class="right">
+					<ul>
+						<li><a href="">导航链接一</a></li>
+						<li><a href="">导航链接二</a></li>
+						<li><a href="">导航链接三</a></li>
+						<li><a href="">导航链接四</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+	</header>
+	<div class="mainBox">
+		<div class="leftBox">
+			<div class="container clearfix">
+				<h1>我是文章一级标题</h1>
+				<h2>我是文章二级标题</h2>
+				<p class="author">文章作者 文章发表时间</p>
+				<p class="content">我是一个很长很长很长很长的段落，我是一个很长很长很长很长的段落，我是一个很长很长很长很长的段落，我是一个很长很长很长很长的段落，我是一个很长很长很长很长的段落，我是一个很长很长很长很长的段落，我是一个很长很长很长很长的段落，换行了<br>
+				我是一个很长很长很长很长的段落，<a href="http://ife.baidu.com">这里有个链接http://ife.baidu.com</a>我是一个很长很长很长很长的段落，<b>这里有个粗体</b>我是一个很长很长很长很长的段落，我是一个很长很长很长很长的段落，换行了<br>
+		        我是一个很长很长很长很长的段落，我是一个很长很长很长很长的段落，我是一个很长很长很长很长的段落，我是一个很长很长很长很长的段落，我是一个很长很长很长很长的段落，我是一个很长很长很长很长的段落，我是一个很长很长很长很长的段落。</p>
+		        <img src="pic1.jpg" alt="我真帅"/>
+		        <p class="content">我是一个很长很长很长很长的段落，我是一个很长很长很长很长的段落，<a href="http://ife.baidu.com" target="_blank">这里有个链接打开一个新窗口http://ife.baidu.com</a>我是一个很长很长很长很长的段落。
+				</p>
+			</div>
+			<div class="container clearfix">
+				<h1>我是第二个文章的一级标题</h1>
+				<h2>二级标题</h2>
+				<p class="author">文章作者 文章发表时间</p>
+				<p class="content">
+				我是一个很长很长很长很长的段落，我是一个很长很长很长很长的段落，我是一个很长很长很长很长的段落，我是一个很长很长很长很长的段落，我是一个很长很长很长很长的段落，我是一个很长很长很长很长的段落，我是一个很长很长很长很长的段落，换行了<br>
+				我是一个很长很长很长很长的段落，<a href="http://ife.baidu.com">这里有个链接http://ife.baidu.com</a>我是一个很长很长很长很长的段落，<b>这里有个粗体</b>我是一个很长很长很长很长的段落，我是一个很长很长很长很长的段落。<br>
+				</p>
+				<img src="pic1.jpg" alt="我真帅"/>
+				<ul class="uList">
+					<li>列表项目一</li>
+					<li>列表项目二</li>
+					<li>列表项目三</li>
+				</ul>
+			</div>
+			<div class="container clearfix">
+				<h1>图片</h1>
+				<div class="picBox">
+					<p>好看的图片</p>
+					<img src="pic1.jpg" alt="我真帅"/>
+				</div>
+				<div class="picBox">
+					<p>好看的图片</p>
+					<img src="pic1.jpg" alt="我真帅"/>
+				</div>
+				<div class="picBox">
+					<p>好看的图片</p>
+					<img src="pic1.jpg" alt="我真帅"/>
+				</div>
+				<div class="picBox">
+					<p>好看的图片</p>
+					<img src="pic1.jpg" alt="我真帅"/>
+				</div>
+				<div class="picBox">
+					<p>好看的图片</p>
+					<img src="pic1.jpg" alt="我真帅"/>
+				</div>
+				<div class="picBox">
+					<p>好看的图片</p>
+					<img src="pic1.jpg" alt="我真帅"/>
+				</div>
+				<div class="picBox">
+					<p>好看的图片</p>
+					<img src="pic1.jpg" alt="我真帅"/>
+				</div>
+				<div class="picBox">
+					<p>好看的图片</p>
+					<img src="pic1.jpg" alt="我真帅"/>
+				</div>
+				<div class="picBox">
+					<p>好看的图片</p>
+					<img src="pic1.jpg" alt="我真帅"/>
+				</div>
+				<div class="picBox">
+					<p>好看的图片</p>
+					<img src="pic1.jpg" alt="我真帅"/>
+				</div>
+			</div>
+			<div class="container clearfix">
+				<h1>我是最后一篇文章的一级标题</h1>
+				<h2>二级标题</h2>
+				<p class="author">文章作者 文章发表时间</p>
+				<ol>
+					<li>排名1</li>
+					<li>排名2</li>
+					<li>排名3</li>
+				</ol>
+				<p>下面是一个表格，加了一个border="1"</p>
+				<table class="table1">
+				    <tr>
+				    	<th>表头</th>
+				    	<th>表头</th>
+				    	<th>表头</th>
+				    </tr>
+					<tr>
+						<td>表内容</td>
+						<td>表内容</td>
+						<td><a href="">操作</a></td>
+					</tr>
+					<tr>
+						<td>表内容</td>
+						<td>表内容</td>
+						<td><a href="">操作</a></td>
+					</tr>
+					<tr>
+						<td>表内容</td>
+						<td>表内容</td>
+						<td><a href="">操作</a></td>
+					</tr>
+					<tr>
+						<td>表内容</td>
+						<td>表内容</td>
+						<td><a href="">操作</a></td>
+					</tr>
+					<tr class="total">
+						<td>总计</td>
+						<td colspan="2">10000</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+		<div class="rightBox">
+			<div class="container clearfix"> 
+				<h4>这里是一个侧栏，我是一个侧栏的标题</h4>
+				<form>
+					<div class="formLine">
+						<label class="formLabel">请输入邮箱地址：</label>
+						<input type="text" name="" value="我是一个文本输入框">
+					</div>
+					<div class="formLine">
+						<label class="formLabel"></label>
+						<label class="prompt">邮箱地址请按要求格式输入</label>			
+					</div>
+					<div class="formLine">
+						<label class="formLabel">请输入密码：</label>
+						<input type="text" name="" value="我是一个文本输入框">
+					</div>
+					<div class="formLine">
+						<label class="formLabel">请重复输入密码：</label>
+						<input type="text" name="" value="我是一个文本输入框">
+					</div>
+					<div class="formLine">
+						<label class="formLabel"></label>
+						<label class="prompt">密码请为6-16位英文数字</label>				
+					</div>
+					<div class="formLine">
+						<label class="formLabel">性别：</label>
+						<input type="radio" checked="checked" name="sex"><label>男</label>
+						<input type="radio" name="sex"><label>女</label>
+					</div>
+					<div class="formLine">
+						<label class="formLabel">城市：</label>
+						<select>
+							<option>北京</option>
+							<option>上海</option>
+						</select>
+					</div>
+					<div class="formLine">
+						<label class="formLabel">爱好：</label>
+						<input type="checkbox" name=""><label>运动</label>
+						<input type="checkbox" name=""><label>画画</label>
+						<input type="checkbox" name=""><label>艺术</label>
+					</div>
+					<div class="formLine">
+						<label class="formLabel">个人描述：</label>
+						<textarea>我是一个多行输入框</textarea>
+					</div>
+					<div class="formLine">
+						<input type="submit" id="mysubmit" value="确认提交" />
+					</div>			
+				</form>
+			</div>	
+		</div>
+	</div>
+	
+	<footer>
+		版权所有&copy;
+	</footer>
+</body>
+</html>
