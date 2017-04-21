@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>IFE JavaScript Task 04</title>
+	<style type="text/css">
+		.item {
+			display: inline-block;
+			padding: 10px;
+			margin: 5px;
+			font-size: 20px;
+			background-color: red;
+			color: #fff;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<input id="data_in" type="text">
+	<button id="left_in">左侧入</button>
+	<button id="right_in">右侧入</button>
+	<span id="space">&nbsp&nbsp</span>
+	<button id="left_out">左侧出</button>
+	<button id="right_out">右侧出</button>
+	<div id="box"></div>
+	<script type="text/javascript">
+		(function(){
+			var add_left = document.getElementById("left_in");
+			var add_right = document.getElementById("right_in");
+			var del_left = document.getElementById("left_out");
+			var del_right = document.getElementById("right_out");
+			add_left.onclick = function(){ add("left") };
+			add_right.onclick = function(){ add("right") };
+			del_left.onclick = function(){ del("left") };
+			del_right.onclick = function(){ del("right") };
+ 		})();
+
+ 		//根据right和left添加子节点
+		function add(dir) {
+			var data = document.getElementById("data_in").value;
+			if(data==""){
+				return;
+			}
+			var sp0 = document.createElement("span");
+			sp0.setAttribute("class","item");
+			sp0.innerHTML = data;
+			sp0.onclick = function(){
+				alert(data);
+				this.parentNode.removeChild(this);
+			}
+			var box0 = document.getElementById("box");
+			var first = box0.firstChild;
+			if(dir == "right") {
+				box0.appendChild(sp0);
+			}
+			else if (dir == "left") {
+				box0.insertBefore(sp0,first);
+			}
+		}
+
+		//根据right和left删除子节点
+		function del(dir) {
+			var box0 = document.getElementById("box");
+			var first = box0.firstChild;
+			var last = box0.lastChild;
+			var d0;
+			if(dir == "right") {
+				d0 = last.innerText;
+				box0.removeChild(last);
+			}
+			else if (dir == "left") {
+				d0 = first.innerText;
+				box0.removeChild(first);
+			}
+			alert(d0);
+		}
+	</script>
+</body>
+</html>
