@@ -41,6 +41,10 @@
 			if(data==""){
 				return;
 			}
+			if(isNaN(data)){
+				alert("请输入数字！");
+				return;
+			}
 			var sp0 = document.createElement("span");
 			sp0.setAttribute("class","item");
 			sp0.innerHTML = data;
