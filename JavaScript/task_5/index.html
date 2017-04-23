@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>IFE JavaScript Task 05</title>
+	<style type="text/css">
+		#box{
+			margin: 10px;
+			height: 100px;
+			position: relative;
+		}
+		.item {
+			display: inline-block;
+			width: 20px;
+			margin: 0px 5px;
+			background-color: red;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<input id="data_in" type="text">
+	<button id="left_in">左侧入</button>
+	<button id="right_in">右侧入</button>
+	<span id="space">&nbsp&nbsp</span>
+	<button id="left_out">左侧出</button>
+	<button id="right_out">右侧出</button>
+	<span id="space">&nbsp&nbsp</span>
+	<button id="sort">排序</button>
+	<div id="box"></div>
+	<script type="text/javascript">
+		(function(){
+			var add_left = document.getElementById("left_in");
+			var add_right = document.getElementById("right_in");
+			var del_left = document.getElementById("left_out");
+			var del_right = document.getElementById("right_out");
+			add_left.onclick = function(){ add("left") };
+			add_right.onclick = function(){ add("right") };
+			del_left.onclick = function(){ del("left") };
+			del_right.onclick = function(){ del("right") };
+
+			var sortby = document.getElementById("sort");
+			sort.onclick = bubble_sort;
+ 		})();
+
+ 		//根据right和left添加子节点
+		function add(dir) {
+			var count = document.getElementsByTagName("span");
+			if(count > 60){
+				alert("队列个数超限！");
+				return;
+			}
+			var data = document.getElementById("data_in").value;
+			if(isNaN(data)){
+				alert("请输入数字！");
+				return;
+			}
+			if(data < 10 || data > 100){
+				alert("数据超出规定范围：10~100!");
+				return;
+			}
+			var sp0 = document.createElement("span");
+			sp0.setAttribute("class","item");
+			sp0.style.height = data + "px";
+			sp0.style.marginTop = (100 - data) + "px";
+			sp0.onclick = function(){
+				alert(data);
+				this.parentNode.removeChild(this);
+			}
+			var box0 = document.getElementById("box");
+			var first = box0.firstChild;
+			if(dir == "right") {
+				box0.appendChild(sp0);
+			}
+			else if (dir == "left") {
+				box0.insertBefore(sp0,first);
+			}
+			document.getElementById("data_in").value = "";
+		}
+
+		//根据right和left删除子节点
+		function del(dir) {
+			var box0 = document.getElementById("box");
+			var first = box0.firstChild;
+			var last = box0.lastChild;
+			var d0;
+			if(dir == "right") {
+				d0 = last.style.height;
+				box0.removeChild(last);
+			}
+			else if (dir == "left") {
+				d0 = first.style.height;
+				box0.removeChild(first);
+			}
+			alert(parseInt(d0));
+		}
+
+		//排序
+		function bubble_sort() {
+			var box0 = document.getElementById("box");
+			var len = box0.childNodes.length;
+			if(len <= 1) {
+				return;
+			}
+			for(var i=0; i<len; i++){
+				for(var j=0; j<len-i-1; j++){
+					setTimeout((function(k){
+						var box0 = document.getElementById("box");
+						var nodes = box0.childNodes;
+						var k0 = parseInt(nodes[k].style.height);
+						var k1 = parseInt(nodes[k+1].style.height);
+						if(k0 > k1) {							
+								nodes[k].style.height = k1 + "px";
+								nodes[k].style.marginTop = (100 - k1) + "px";
+								nodes[k+1].style.height = k0 + "px";
+								nodes[k+1].style.marginTop = (100 - k0) + "px";						
+						}
+					})(j),1000);
+				}				
+			}
+		}
+	</script>
+</body>
+</html>
