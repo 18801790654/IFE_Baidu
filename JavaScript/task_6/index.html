@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>IFE JavaScript Task 06</title>
+	<style type="text/css">
+		.item {
+			display: inline-block;
+			padding: 10px;
+			margin: 5px;
+			font-size: 20px;
+			background-color: #fff;
+			color: #f00;
+			border: 1px solid #f00;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<textarea id="data_in" cols="50" rows="3"></textarea>
+	<br>
+	<button id="left_in">左侧入</button>
+	<button id="right_in">右侧入</button>
+	<span id="space">&nbsp&nbsp</span>
+	<button id="left_out">左侧出</button>
+	<button id="right_out">右侧出</button>
+	<br>
+	<input type="text" id="text_s">
+	<button id="search">搜索</button>
+	<div id="box"></div>
+	<script type="text/javascript">
+		(function(){
+			var add_left = document.getElementById("left_in");
+			var add_right = document.getElementById("right_in");
+			var del_left = document.getElementById("left_out");
+			var del_right = document.getElementById("right_out");
+			add_left.onclick = function(){ add("left") };
+			add_right.onclick = function(){ add("right") };
+			del_left.onclick = function(){ del("left") };
+			del_right.onclick = function(){ del("right") };
+
+			var bt_search = document.getElementById("search");
+			bt_search.onclick = sch;
+ 		})();
+
+ 		//根据right和left添加子节点
+		function add(dir) {
+			var data = document.getElementById("data_in").value;
+			if(data==""){
+				alert("请输入数据！")
+				return;
+			}
+			var sp0 = document.createElement("span");
+			sp0.setAttribute("class","item");
+			sp0.innerHTML = data;
+			sp0.onclick = function(){
+				alert(data);
+				this.parentNode.removeChild(this);
+			}
+			var box0 = document.getElementById("box");
+			var first = box0.firstChild;
+			if(dir == "right") {
+				box0.appendChild(sp0);
+			}
+			else if (dir == "left") {
+				box0.insertBefore(sp0,first);
+			}
+			document.getElementById("data_in").value = "";
+		}
+
+		//根据right和left删除子节点
+		function del(dir) {
+			var box0 = document.getElementById("box");
+			var first = box0.firstChild;
+			var last = box0.lastChild;
+			var d0;
+			if(dir == "right") {
+				d0 = last.innerText;
+				box0.removeChild(last);
+			}
+			else if (dir == "left") {
+				d0 = first.innerText;
+				box0.removeChild(first);
+			}
+			alert("删除内容：" + d0);
+		}
+		//搜索
+		function sch() {
+			var txt = document.getElementById("text_s").value;
+			if(txt == ""){
+				alert("请输入查询数据！")
+				return;
+			}
+			var box0 = document.getElementById("box");
+			var nodes = box0.childNodes;
+			var len = nodes.length;
+			for(var i=0; i<len; i++){
+				var nd0 = nodes[i];
+				var str = nd0.innerText;
+				if(str.indexOf(txt) > -1){
+					nd0.style.backgroundColor = "#f00";
+					nd0.style.color = "#fff";
+				}
+				else {
+					nd0.style.backgroundColor = "#fff";
+					nd0.style.color = "#f00";
+				}
+
+			}
+		}
+	</script>
+</body>
+</html>
